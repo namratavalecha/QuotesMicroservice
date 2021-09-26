@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quotesmicroservice-deployment
+  labels:
+    app: QuotesMicroservicePAS
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: QuotesMicroservicePAS	  
+  template:
+    metadata:
+      labels:
+        app: QuotesMicroservicePAS
+    spec:
+      containers:
+      - name: quotesmicroserviepas
+        image: docker pull authmicroservicecr.azurecr.io/quotesmicroservice:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: quotessecret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quotesmicroserviepasservice
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: QuotesMicroservicePAS
