@@ -62,3 +62,9 @@
 /home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/obj/Debug/net5.0/ref/QuotesAPI.dll
 /home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/obj/Debug/net5.0/QuotesAPI.pdb
 /home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/obj/Debug/net5.0/QuotesAPI.genruntimeconfig.cache
+/home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/publish/log4net.config
+/home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/publish/web.config
+/home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/publish/appsettings.Development.json
+/home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/publish/appsettings.json
+/home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/publish/QuotesAPI.deps.json
+/home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/publish/QuotesAPI.runtimeconfig.json
