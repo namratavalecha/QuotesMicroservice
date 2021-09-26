@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: quotesmicroserviepas
-        image: docker pull authmicroservicecr.azurecr.io/quotesmicroservice:latest
+        image: authmicroservicecr.azurecr.io/quotesmicroservice:latest
         ports:
         - containerPort: 8080
       imagePullSecrets:
