@@ -20,7 +20,7 @@ spec:
         ports:
         - containerPort: 8080
       imagePullSecrets:
-      - name: authsecret
+      - name: quotessecret
 ---
 apiVersion: v1
 kind: Service
