@@ -79,43 +79,35 @@ namespace PolicyAdmin.QuotesMS.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PolicyAdmin.QuotesMS.API", Version = "v1" });
+                c.SwaggerDoc("v1.0", new OpenApiInfo { Title = "Web API", Version = "1.0" });
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var scopeeee = app.ApplicationServices.CreateScope();
-            var context = scopeeee.ServiceProvider.GetRequiredService<QuotesContext>();
-            DataGenerator.Initialize(context);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PolicyAdmin.QuotesMS.API v1"));
             }
-            //try
-            //{
-            //    _log4net.Info("Data Seding for In-Memory DB Started");
-            //    if (Configuration.GetValue<bool>("InMemoryDatabase"))
-            //    {
-            //        var scopeeee = app.ApplicationServices.CreateScope();
-            //        var context = scopeeee.ServiceProvider.GetRequiredService<QuotesContext>();
-            //        //DataGenerator.Initialize(context);
+            app.UseCors("Policy Administration System");
+            app.UseSwagger();
+            // app.UseMiddleware<JWTMiddleware>();
 
-            //    }
-            //    _log4net.Info("Data Seding for In-Memory DB Completed");
-            //}
-            //catch(Exception e)
-            //{
-            //    _log4net.Error("Exception in Data Seeding: "+  e.Message);
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Web API (V 1.0)");
 
-            //}
-            
+            });
+
+            // loggerFactory.AddLog4Net();
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors("POD_1_Policy");
+
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
