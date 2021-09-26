@@ -1,0 +1,15 @@
+INFO  09/26/2021 12:08:36 AM => Initializing Program
+INFO  09/26/2021 12:09:57 AM => Initializing Program
+INFO  09/26/2021 12:10:42 AM => Initializing Program
+INFO  09/26/2021 12:13:19 AM => Initializing Program
+INFO  09/26/2021 12:13:45 AM => Initializing Program
+INFO  09/26/2021 12:15:25 AM => Initializing Program
+INFO  09/26/2021 01:06:39 PM => Initializing Program
+INFO  09/26/2021 01:07:32 PM => Initializing Program
+INFO  09/26/2021 01:21:02 PM => Initializing Program
+INFO  09/26/2021 01:22:51 PM => Initializing Program
+INFO  09/26/2021 01:25:42 PM => Initializing Program
+INFO  09/26/2021 01:27:17 PM => Initializing Program
+INFO  09/26/2021 01:35:30 PM => GetQuotesForPolicy action method started with PropertyValue=1 BusinessValue=1 PropertyType=Building
+INFO  09/26/2021 01:35:32 PM => Received Request for Quote
+INFO  09/26/2021 01:35:32 PM => Request Quotes for Property Type=Building, PropertyValue=1, BusinessValue=1
