@@ -3,24 +3,24 @@ kind: Deployment
 metadata:
   name: quotesmicroservice-deployment
   labels:
-    app: QuotesMicroservicePAS
+    app: PASQuotesMicroservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: QuotesMicroservicePAS	  
+      app: PASQuotesMicroservice	  
   template:
     metadata:
       labels:
-        app: QuotesMicroservicePAS
+        app: PASQuotesMicroservice
     spec:
       containers:
-      - name: quotesmicroserviepas
-        image: authmicroservicecr.azurecr.io/quotesmicroservice:latest
+      - name: pasquotesmicroservice
+        image: policyadministrationsystem.azurecr.io/pasquotesmicroservice:latest
         ports:
         - containerPort: 8080
       imagePullSecrets:
-      - name: quotessecret
+      - name: policyadminsecret
 ---
 apiVersion: v1
 kind: Service
@@ -31,4 +31,4 @@ spec:
   ports:
   - port: 80
   selector:
-    app: QuotesMicroservicePAS
+    app: PASQuotesMicroservice
