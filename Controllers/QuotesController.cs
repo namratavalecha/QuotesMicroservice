@@ -38,7 +38,7 @@ namespace PolicyAdmin.QuotesMS.API.Controllers
             var client = _clientFactory.CreateClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://10.0.74.121/api/Auth/Verify");
+            var request = new HttpRequestMessage(HttpMethod.Post, "http://10.244.0.5/api/Auth/Verify");
 
             HttpResponseMessage response = await client.SendAsync(request);
 
