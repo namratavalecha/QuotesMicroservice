@@ -68,3 +68,4 @@
 /home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/publish/appsettings.json
 /home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/publish/QuotesAPI.deps.json
 /home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/publish/QuotesAPI.runtimeconfig.json
+/home/namrata/dotnet/PolicyAdministrationSystem/QuotesAPI/bin/Debug/net5.0/Deployment.yaml

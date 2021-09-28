@@ -26,7 +26,7 @@ namespace PolicyAdmin.QuotesMS.API.Services
             return quotes;
         }
 
-        public IEnumerable<QuoteMaster> GetQuotes(PropertyType propertyType, int propertyValue, int businessValue)
+        public IQueryable<int> GetQuotes(PropertyType propertyType, int propertyValue, int businessValue)
         {
             var quotes =  _context.QuotesMaster.Where(quote => 
                                         quote.PropertyType == propertyType &&
@@ -34,7 +34,7 @@ namespace PolicyAdmin.QuotesMS.API.Services
                                         propertyValue <= quote.PropertyValueRangeTo &&
                                         quote.BusinessValueRangeFrom <= businessValue &&
                                         businessValue <=quote.BusinessValueRangeTo
-                                        );
+                                        ).Select(quote=> quote.Quote);
             return quotes;
         }
     }

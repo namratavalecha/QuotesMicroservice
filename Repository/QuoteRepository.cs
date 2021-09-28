@@ -23,10 +23,10 @@ namespace PolicyAdmin.QuotesMS.API.Repository
             return _provider.GetAllQuotes();
         }
 
-        public IEnumerable<QuoteMaster> GetQuotes(PropertyType propertyType, int propertyValue, int businessValue)
+        public IQueryable<int> GetQuotes(PropertyType propertyType, int propertyValue, int businessValue)
         {
             _log4net.Info($"Request Quotes for Property Type={propertyType.ToString()}, PropertyValue={propertyValue}, BusinessValue={businessValue}");
-            return _provider.GetQuotes( propertyType,  propertyValue,  businessValue);
+            return (IQueryable<int>)_provider.GetQuotes( propertyType,  propertyValue,  businessValue);
         }
     }
 }

@@ -53,7 +53,7 @@ namespace PolicyAdmin.QuotesMS.API
             services.AddTransient<IQuotesDBService,QuotesDBService>();
             services.AddTransient<IQuoteRepository,QuoteRepository>();
             services.AddDbContext<QuotesContext>(options =>
-               options.UseSqlServer("Server=tcp:policyadministration.database.windows.net,1433;Initial Catalog=PolicyAdministration;Persist Security Info=False;User ID=namrata;Password=admin@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+               options.UseSqlServer("Server=tcp:mftepas.database.windows.net,1433;Initial Catalog=PolicyAdministrationSystem;Persist Security Info=False;User ID=mftepas;Password=project#123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
 
             //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             //    .AddJwtBearer(opt =>
@@ -86,6 +86,9 @@ namespace PolicyAdmin.QuotesMS.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // var scope = app.ApplicationServices.CreateScope();
+            // var context = scope.ServiceProvider.GetRequiredService<QuotesContext>();
+            // DataGenerator.Initialize(context);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

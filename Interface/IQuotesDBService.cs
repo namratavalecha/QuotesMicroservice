@@ -10,7 +10,7 @@ namespace PolicyAdmin.QuotesMS.API.Interface
 {
     public interface IQuotesDBService
     {
-        IEnumerable<QuoteMaster> GetQuotes(PropertyType propertyType, int propertyValue, int businessValue);
+        IQueryable<int> GetQuotes(PropertyType propertyType, int propertyValue, int businessValue);
         IEnumerable<QuoteMaster> GetAllQuotes();
 
       

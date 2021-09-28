@@ -38,7 +38,7 @@ namespace PolicyAdmin.QuotesMS.API.Controllers
             var client = _clientFactory.CreateClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://authmicroservicepas.azurewebsites.net/api/Auth/Verify");
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://authorizationmicroservicepas.azurewebsites.net/api/Auth/Verify");
 
             HttpResponseMessage response = await client.SendAsync(request);
 
@@ -52,6 +52,9 @@ namespace PolicyAdmin.QuotesMS.API.Controllers
         public async Task<IActionResult> getQuotesForPolicy(int propertyValue, int businessValue, string propertyType, [FromHeader] string authorization)
         {
             _log4net.Info("GetQuotesForPolicy action method started with PropertyValue=" + propertyValue + " BusinessValue=" + businessValue + " PropertyType=" + propertyType);
+            if(authorization == null){
+                return Unauthorized("Please provide token");
+            }
             if (AuthenticationHeaderValue.TryParse(authorization, out var headerValue))
             {
                 var result = await CheckTokenValidity(headerValue.Scheme, headerValue.Parameter);
@@ -69,7 +72,7 @@ namespace PolicyAdmin.QuotesMS.API.Controllers
             if (quotes == null)
                 return new BadRequestResult();
             else
-                return new OkObjectResult(quotes);
+                return new OkObjectResult(quotes.First());
 
 
         }
